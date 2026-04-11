@@ -5,7 +5,7 @@ score=0
 life=3
 mo=[]
 gamestate="start"
-music.play("monkispinmonki.mp3")
+music.play("itbit8bit.mp3")
 #kevmac
 STR=Actor("star.png")
 STR.scale=0.5
@@ -29,10 +29,18 @@ def draw():
             i.draw()
     else:
         message="GAME OVER"
-        screen.draw.text(message, center=(WIDTH//2, HEIGHT//2, fontsize=40))
+        screen.draw.text(message, center=(WIDTH//2, HEIGHT//2, fontsize==40))
+    if keyboard.space:
+        gamestate=="play"
 
 def update():
     global score, life, gamestate
+    global score, life, gamestate
+    if keyboard.space and gamestate != "play":
+        gamestate="play"
+        score=0
+        life=3
+        
     if gamestate=="play":
         if keyboard.up:
             STR.y=STR.y-10
@@ -53,7 +61,7 @@ def update():
                     #universfield
                     score+=10
                 elif i.image=="spaceship":
-                    sound.frostedow.play
+                    #sound.frostedow.play
                     #Frosted_52
                     life-=1
                 mo.remove(i)
